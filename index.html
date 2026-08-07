@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenshop</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header hidden-mobile">
+      <div class="header__logo logo">
+        <a class="logo__link" href="/">
+          <img class="logo__img" src="./src/assets/icons/logo.svg" alt="Логотип Greenshop" width="150" height="34">
+        </a>
+      </div>
+      <nav class="header__menu menu" aria-label="Главное меню">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a class="menu__link active" href="/">Главная</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Магазин</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Уход за растениями</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Блог</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a class="header__search-link" href="#">
+          <img class="header__search-icon" src="./src/assets/icons/search.svg" alt="">
+        </a>
+        <a class="header__cart-link" href="#">
+          <img class="header__cart-icon" src="./src/assets/icons/cart-black.svg" alt="">
+        </a>
+        <a class="header__login-link link-btn"><img src="./src/assets/icons/logout.svg" alt="">Войти</a>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="visually-hidden">Комнатные растения для дома и офиса</h1>
+      <section class="hero">
+        <div class="hero__slider slider swiper-container">
+          <div class="slider__wrapper swiper-wrapper">
+            <div class="slider__slide swiper-slide">
+              <div class="slider__content">
+                <p class="slider__text">Баннер 1</p>
+                <h2 class="slider__title">Lorem ipsum dolor <span>sit amet</span></h2>
+                <p class="slider__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum
+                  deserunt cumque praesentium optio. Dignissimos molestiae quae, quis, aspernatur explicabo ab ipsum
+                  iure aut.</p>
+                <a class="slider__btn link-btn" href="#">В магазин</a>
+              </div>
+              <div class="slider__img">
+                <img src="./src/assets/images/banner-img-1.png" alt="">
+              </div>
+            </div>
+            <div class="slider__slide swiper-slide">
+              <div class="slider__content">
+                <p class="slider__text">Баннер 2</p>
+                <h2 class="slider__title">Lorem ipsum dolor <span>sit amet</span></h2>
+                <p class="slider__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum
+                  deserunt cumque praesentium optio. Dignissimos molestiae quae, quis, aspernatur explicabo ab ipsum
+                  iure aut ad eum aliquam excepturi illo officia!</p>
+                <a class="slider__btn link-btn" href="#">В магазин</a>
+              </div>
+              <div class="slider__img">
+                <img src="./src/assets/images/banner-img-1.png" alt="">
+              </div>
+            </div>
+            <div class="slider__slide swiper-slide">
+              <div class="slider__content">
+                <p class="slider__text">Баннер 3</p>
+                <h2 class="slider__title">Lorem ipsum dolor <span>sit amet</span></h2>
+                <p class="slider__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum
+                  deserunt cumque praesentium optio. Dignissimos molestiae quae, quis, aspernatur explicabo ab ipsum
+                  iure aut ad eum aliquam excepturi illo officia!</p>
+                <a class="slider__btn link-btn" href="#">В магазин</a>
+              </div>
+              <div class="slider__img">
+                <img src="./src/assets/images/banner-img-1.png" alt="">
+              </div>
+            </div>
+          </div>
+          <!-- Пагинация (точки) -->
+          <div class="slider__pagination swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="products">
+        <h2 class="visually-hidden">Каталог товаров</h2>
+        <div class="products__sidebar sidebar hidden-tablet">
+          <h3 class="visually-hidden">Дополнительные фильтры для товаров</h3>
+          <div class="sidebar__content">
+            <div class="sidebar__categories">
+              <h4 class="sidebar__title title-1">Категории</h4>
+              <div class="sidebar__container">
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Комнатные растения</a></span>
+                  <span class="sidebar__number">(33)</span>
+                </div>
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Садовые растения</a></span>
+                  <span class="sidebar__number">(28)</span>
+                </div>
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Суккуленты</a></span>
+                  <span class="sidebar__number">(17)</span>
+                </div>
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Семена</a></span>
+                  <span class="sidebar__number">(25)</span>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar__price">
+              <h4 class="sidebar__title title-1">Цена</h4>
+              <div class="sidebar__container">
+                <div class="sidebar__range-slider" id="range-slider"></div>
+                <div class="sidebar__inputs">
+                  <label class="sidebar__label">Цена: от
+                    <input type="number" class="sidebar__input" id="input-0" min="0" max="50000" placeholder="0">
+                    <span class="sidebar__span">до</span>
+                    <input type="number" class="sidebar__input" id="input-1" min="0" max="50000" placeholder="50 000">
+                  </label>
+                </div>
+                <button class="sidebar__btn btn" type="button">Показать</button>
+              </div>
+            </div>
+            <div class="sidebar__size">
+              <h4 class="sidebar__title title-1">Размер</h4>
+              <div class="sidebar__container">
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Маленький</a></span>
+                  <span class="sidebar__number">(21)</span>
+                </div>
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Средний</a></span>
+                  <span class="sidebar__number">(35)</span>
+                </div>
+                <div class="sidebar__row">
+                  <span class="sidebar__name"><a class="link" href="#">Большой</a></span>
+                  <span class="sidebar__number">(12)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar__banner">
+            <img src="./src/assets/images/super-sale-banner.jpg" alt="">
+          </div>
+        </div>
+        <div class="products__catalog catalog">
+          <div class="catalog__controls">
+            <h3 class="visually-hidden">Основные фильтры для товаров</h3>
+            <div class="catalog__filter filter">
+              <button class="filter__button link active" type="button" data-name="all">Все товары</button>
+              <button class="filter__button link" type="button" data-badge="new">Новые</button>
+              <button class="filter__button link" type="button" data-badge="sale">Акция</button>
+            </div>
+            <div class="catalog__sort sort">
+              <span class="sort__label">Сортировать:</span>
+              <select class="sort__select">
+                <option class="sort__option" value="price-asc">сначала дешевле</option>
+                <option class="sort__option" value="price-desc">сначала дороже</option>
+                <option class="sort__option" value="popular">по популярности</option>
+              </select>
+            </div>
+          </div>
+          <h3 class="visually-hidden">Карточки товаров</h3>
+          <ul class="catalog__cards" id="catalog">
+            <li class="catalog__card card" data-badge="new" data-price="119">
+              <div class="card__img-wrap">
+                <img src="./src/assets/images/product-1.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 1</a>
+                <p class="card__price">119 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-price="29">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-2.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 2</a>
+                <p class="card__price">29 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-badge="sale" data-price="45">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-3.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 3</a>
+                <p class="card__price">45 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-price="176">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-1.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 4</a>
+                <p class="card__price">176 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-badge="new" data-price="234">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-2.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 5</a>
+                <p class="card__price">234 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-badge="sale" data-price="5">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-3.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 6</a>
+                <p class="card__price">5 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-price="90">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-1.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 7</a>
+                <p class="card__price">90 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-price="456">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-2.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 8</a>
+                <p class="card__price">456 &#8381;</p>
+              </div>
+            </li>
+            <li class="catalog__card card" data-price="2346">
+              <div class="card__img-wrap">
+                <img src="src/assets/images/product-3.png" width="" height="" class="card__img" alt="">
+                <div class="card__actions">
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/cart-green.svg" alt="">
+                  </button>
+                  <button class="card__btn" type="button">
+                    <img class="card__icon" src="./src/assets/icons/like.svg" alt="">
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <a href="#" class="card__title link">Кактус 9</a>
+                <p class="card__price">2346 &#8381;</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="products__pagination pagination hidden-mobile">
+          <div class="pagination__wrap">
+            <a class="pagination__link active" href="#">1</a>
+            <a class="pagination__link" href="#">2</a>
+            <a class="pagination__link" href="#">3</a>
+            <a class="pagination__link" href="#"><img src="./src/assets/icons/arrow-right-slider.svg" alt=""></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about hidden-mobile">
+        <h2 class="visually-hidden">Подробнее о нас</h2>
+        <div class="about__item">
+          <img src="./src/assets/images/about-img.png" alt="" class="about__img">
+          <img src="./src/assets/icons/lines.svg" alt="" class="about__lines">
+          <h3 class="about__title">Lorem ipsum dolor sit amet consectetur.</h3>
+          <p class="about__desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo illum natus excepturi.
+          </p>
+          <a href="#" class="about__link link-btn">Подробнее
+            <img src="./src/assets/icons/arrow-right-btn.svg" alt="">
+          </a>
+        </div>
+        <div class="about__item">
+          <img src="./src/assets/images/about-img.png" alt="" class="about__img">
+          <img src="./src/assets/icons/lines.svg" alt="" class="about__lines">
+          <h3 class="about__title">Lorem ipsum dolor sit amet consectetur.</h3>
+          <p class="about__desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo illum natus excepturi.
+          </p>
+          <a href="#" class="about__link link-btn">Подробнее
+            <img src="./src/assets/icons/arrow-right-btn.svg" alt="">
+          </a>
+        </div>
+      </section>
+
+      <section class="blog hidden-mobile">
+        <div class="blog__content">
+          <h2 class="blog__title">Наши статьи</h2>
+          <p class="blog__desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, accusamus eius error
+            fugiat ad tenetur.</p>
+        </div>
+        <div class="blog__posts">
+          <div class="blog__post post">
+            <img class="post__img" src="src/assets/images/post-1.jpg" width="" height="" alt="">
+            <div class="post__body">
+              <p class="post__info">1 августа, 2026</p>
+              <h3 class="post__title">Lorem ipsum dolor sit amet</h3>
+              <p class="post__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <a href="#" class="post__link link">Читать
+                <!-- <img src="/src/assets/icons/arrow-right-post-black.svg" alt=""> -->
+              </a>
+            </div>
+          </div>
+          <div class="blog__post post">
+            <img class="post__img" src="src/assets/images/post-1.jpg" width="" height="" alt="">
+            <div class="post__body">
+              <p class="post__info">1 августа, 2026</p>
+              <h3 class="post__title">Lorem ipsum dolor sit amet</h3>
+              <p class="post__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <a href="#" class="post__link link">Читать
+                <!-- <img src="/src/assets/icons/arrow-right-post-black.svg" alt=""> -->
+              </a>
+            </div>
+          </div>
+          <div class="blog__post post">
+            <img class="post__img" src="src/assets/images/post-1.jpg" width="" height="" alt="">
+            <div class="post__body">
+              <p class="post__info">1 августа, 2026</p>
+              <h3 class="post__title">Lorem ipsum dolor sit amet</h3>
+              <p class="post__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <a href="#" class="post__link link">Читать
+                <!-- <img src="/src/assets/icons/arrow-right-post-black.svg" alt=""> -->
+              </a>
+            </div>
+          </div>
+          <div class="blog__post post">
+            <img class="post__img" src="src/assets/images/post-1.jpg" width="" height="" alt="">
+            <div class="post__body">
+              <p class="post__info">1 августа, 2026</p>
+              <h3 class="post__title">Lorem ipsum dolor sit amet</h3>
+              <p class="post__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+              <a href="#" class="post__link link">Читать
+                <!-- <img src="/src/assets/icons/arrow-right-post-black.svg" alt=""> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer hidden-mobile">
+      <div class="footer__wrap">
+        <div class="footer__info">
+          <div class="footer__info-item">
+            <img class="footer__img" src="./src/assets/icons/footer-img-1.svg" alt="">
+            <p class="footer__title">Советы по уходу</p>
+            <p class="footer__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis?</p>
+          </div>
+          <div class="footer__info-item">
+            <img class="footer__img" src="./src/assets/icons/footer-img-2.svg" alt="">
+            <p class="footer__title">Советы по уходу</p>
+            <p class="footer__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis?</p>
+          </div>
+          <div class="footer__info-item">
+            <img class="footer__img" src="./src/assets/icons/footer-img-3.svg" alt="">
+            <p class="footer__title">Советы по уходу</p>
+            <p class="footer__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis?</p>
+          </div>
+        </div>
+        <div class="footer__subscribe">
+          <p class="footer__title title-1">Хотите получать рассылку?</p>
+          <form class="footer__form">
+            <input class="footer__form-input" type="text" placeholder="введите свой email">
+            <button class="footer__form-btn btn" type="submit">Отправить</button>
+          </form>
+          <p class="footer__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quod asperiores
+            excepturi.</p>
+        </div>
+        <div class="footer__item">
+          <p class="footer__title title-1">Мы в социальных сетях</p>
+          <div class="footer__socials socials">
+            <a class="socials__link" href="">
+              <img class="socials__icon" src="./src/assets/icons/max-icon.svg" alt="">
+            </a>
+            <a class="socials__link" href="">
+              <img class="socials__icon" src="./src/assets/icons/vk-icon.svg" alt="">
+            </a>
+          </div>
+          <p class="footer__title title-1">Мы принимаем</p>
+          <div class="footer__payments">
+            <img class="footer__payment-img" src="./src/assets/icons/mir-icon.svg" alt="">
+            <img class="footer__payment-img" src="./src/assets/icons/visa-icon.svg" alt="">
+            <img class="footer__payment-img" src="./src/assets/icons/mastercard-icon.svg" alt="">
+          </div>
+        </div>
+        <div class="footer__logo logo footer--green-item">
+          <a class="logo__link" href="#">
+            <img class="logo__img" src="./src/assets/icons/logo.svg" alt="Logo">
+          </a>
+        </div>
+        <div class="footer__address footer--green-item">
+          <img class="footer__icon" src="./src/assets/icons/location.svg" alt="">
+          <span class="footer__desc">Бульвар 30-летия победы, 21, Волгоград</span>
+        </div>
+        <div class="footer__email footer--green-item">
+          <img class="footer__icon" src="./src/assets/icons/message.svg" alt="">
+          <a class="footer__desc" href="mailto:contact@greenshop.com">contact@greenshop.ru</a>
+        </div>
+        <div class="footer__phone footer--green-item">
+          <img class="footer__icon" src="./src/assets/icons/calling.svg" alt="">
+          <a class="footer__desc" href="tel:+79991234567">+7 (999) 123-45-67</a>
+        </div>
+        <nav class="footer__menu" aria-label="Дополнительное меню">
+          <div class="footer__menu-block">
+            <p class="footer__title title-1">Категория меню</p>
+            <ul>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+            </ul>
+          </div>
+          <div class="footer__menu-block">
+            <p class="footer__title title-1">Категория меню</p>
+            <ul>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+            </ul>
+          </div>
+          <div class="footer__menu-block">
+            <p class="footer__title title-1">Категория меню</p>
+            <ul>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+              <li class="footer__menu-item"><a class="link" href="#">Пункт меню</a></li>
+            </ul>
+          </div>
+        </nav>
+
+
+      </div>
+      <p class="footer__rights">© 2026 GreenShop. Все права защищены.</p>
+    </footer>
+  </div>
+
+  <nav class="bottom-nav visible-mobile">
+    <a href="#" class="bottom-nav__item active">
+      <span class="bottom-nav__icon">
+        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M5.52898 15.6445V13.0963C5.52898 12.4459 6.06014 11.9186 6.71536 11.9186H9.11051C9.42516 11.9186 9.72692 12.0427 9.94941 12.2635C10.1719 12.4844 10.2969 12.784 10.2969 13.0963V15.6445C10.2949 15.9149 10.4017 16.1749 10.5936 16.3668C10.7856 16.5587 11.0467 16.6667 11.3191 16.6667H12.9532C13.7164 16.6686 14.449 16.369 14.9893 15.834C15.5297 15.299 15.8333 14.5725 15.8333 13.8149V6.55572C15.8333 5.94372 15.5601 5.3632 15.0872 4.97056L9.52835 0.563224C8.56138 -0.209532 7.17593 -0.184582 6.23783 0.622482L0.805844 4.97056C0.310617 5.35163 0.0146269 5.93386 0 6.55572V13.8074C0 15.3865 1.28948 16.6667 2.88014 16.6667H4.47691C5.04269 16.6667 5.5025 16.2135 5.5066 15.6519L5.52898 15.6445Z"
+            fill="currentColor" />
+        </svg>
+      </span>
+      <span class="bottom-nav__label">Главная</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <span class="bottom-nav__icon">
+        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18.4134 1.74133C17.3781 0.618439 15.9575 0 14.413 0C13.2585 0 12.2012 0.36499 11.2704 1.08475C10.8008 1.44806 10.3752 1.89255 10 2.41135C9.62494 1.8927 9.19922 1.44806 8.7294 1.08475C7.79877 0.36499 6.74149 0 5.58701 0C4.04251 0 2.62177 0.618439 1.58646 1.74133C0.563507 2.8511 0 4.36722 0 6.01059C0 7.70203 0.630341 9.25034 1.98364 10.8833C3.19427 12.3441 4.93423 13.8269 6.94916 15.544C7.63718 16.1304 8.41705 16.795 9.22684 17.5031C9.44077 17.6904 9.71527 17.7936 10 17.7936C10.2846 17.7936 10.5592 17.6904 10.7729 17.5034C11.5826 16.7952 12.363 16.1302 13.0513 15.5435C15.0659 13.8268 16.8059 12.3441 18.0165 10.8832C19.3698 9.25034 20 7.70203 20 6.01044C20 4.36722 19.4365 2.8511 18.4134 1.74133Z"
+            fill="#D9D9D9" />
+        </svg>
+      </span>
+      <span class="bottom-nav__label">Избранное</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <span class="bottom-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18.333 6.80134L17.3894 12.7778C17.2178 13.9562 16.2742 14.7138 15.0732 14.7138H6.83791C5.72271 14.7138 4.6933 13.872 4.52173 12.7778L3.49232 5.79124L3.23497 3.85521C3.14918 3.35016 2.72026 3.01346 2.11977 3.01346H1.51928C1.17615 3.01346 0.833008 2.67676 0.833008 2.34006C0.833008 2.00336 1.17615 1.66666 1.51928 1.66666H2.11977C3.32075 1.66666 4.35016 2.50841 4.43595 3.68686L4.60752 5.03366H16.7889C17.2178 5.03366 17.6467 5.20201 17.9041 5.53871C18.2472 5.87541 18.333 6.38046 18.333 6.80134Z"
+            fill="#D9D9D9" />
+          <path
+            d="M15.2448 18.3333C15.7185 18.3333 16.1026 17.9565 16.1026 17.4916C16.1026 17.0267 15.7185 16.6498 15.2448 16.6498C14.771 16.6498 14.3869 17.0267 14.3869 17.4916C14.3869 17.9565 14.771 18.3333 15.2448 18.3333Z"
+            fill="#D9D9D9" />
+          <path
+            d="M6.66634 18.3333C7.14012 18.3333 7.52418 17.9565 7.52418 17.4916C7.52418 17.0267 7.14012 16.6498 6.66634 16.6498C6.19257 16.6498 5.8085 17.0267 5.8085 17.4916C5.8085 17.9565 6.19257 18.3333 6.66634 18.3333Z"
+            fill="#D9D9D9" />
+        </svg>
+      </span>
+      <span class="bottom-nav__label">Корзина</span>
+    </a>
+    <a href="#" class="bottom-nav__item">
+      <span class="bottom-nav__icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M9.99967 9.82998C12.2655 9.82998 14.1022 8.00257 14.1022 5.74835C14.1022 3.49413 12.2655 1.66672 9.99967 1.66672C7.73389 1.66672 5.89711 3.49413 5.89711 5.74835C5.89711 8.00257 7.73389 9.82998 9.99967 9.82998Z"
+            fill="#D9D9D9" />
+          <path
+            d="M12.1364 11.5307H7.86292C5.38429 11.5307 3.33301 13.5716 3.33301 16.0375C3.33301 16.6328 3.58942 17.143 4.10224 17.3981C4.87147 17.8233 6.58087 18.3335 9.99967 18.3335C13.4185 18.3335 15.1279 17.8233 15.8971 17.3981C16.3245 17.143 16.6663 16.6328 16.6663 16.0375C16.6663 13.4865 14.6151 11.5307 12.1364 11.5307Z"
+            fill="#D9D9D9" />
+        </svg>
+      </span>
+      <span class="bottom-nav__label">Профиль</span>
+    </a>
+  </nav>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

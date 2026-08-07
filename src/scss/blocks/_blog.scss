@@ -1,0 +1,41 @@
+@use '../mixins';
+@use '../media';
+
+.blog {
+  height: 447px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include media.desktop {
+    margin-bottom: 70px;
+  }
+
+  @include media.tablet {
+    margin-bottom: 50px;
+  }
+
+  &__content {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    @include mixins.fluid-text(30, 20);
+    font-weight: 700;
+    margin-bottom: 13px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: var(--color-grey);
+    margin-bottom: 35px;
+  }
+
+  &__posts {
+    width: 100%;
+    min-height: 362px;
+    @include mixins.flex-base;
+  }
+}

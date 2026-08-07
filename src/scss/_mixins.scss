@@ -1,0 +1,39 @@
+@mixin fluid-text($max: 14, $min: 12) {
+  font-size: clamp(#{$min}px, #{calc($max / 1440) * 100}vw, #{$max}px);
+}
+
+@mixin btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin flex-base($direction: row) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-cards($direction: row) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-direction: $direction;
+}
+
+@mixin flex-right($direction: column) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: $direction;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

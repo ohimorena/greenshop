@@ -1,0 +1,244 @@
+@use '../mixins';
+@use '../media';
+
+.products {
+  height: clamp(1270px, 95vw, 1370px);
+  margin-bottom: 146px;
+  @include mixins.flex-base;
+  flex-wrap: wrap;
+
+  @include media.desktop {
+    margin-bottom: 100px;
+  }
+
+  @include media.tablet {
+    height: 1000px;
+    margin-bottom: 70px;
+  }
+
+  @include media.mobile {
+    height: auto;
+  }
+
+  &__sidebar {
+    width: 26%;
+    height: 91%;
+  }
+
+  &__catalog {
+    width: 70%;
+    height: 91%;
+
+    @include media.tablet {
+      width: 100%;
+      height: 93%;
+    }
+  }
+
+  &__pagination {
+    width: 100%;
+    height: 9%;
+    position: relative;
+
+    @include media.tablet {
+      height: 7%;
+    }
+  }
+}
+
+.sidebar {
+  @include mixins.flex-base(column);
+
+  &__content {
+    width: 100%;
+    // height: 774px;
+    height: 62%;
+    padding: 14px 24px 19px 18px;
+    background-color: var(--color-light);
+    @include mixins.flex-base(column);
+    align-items: stretch;
+  }
+
+  &__title {
+    margin-bottom: 7px;
+  }
+
+  &__container {
+    padding-left: 12px;
+  }
+
+  &__row {
+    font-size: 15px;
+    line-height: 267%;
+    @include mixins.flex-base;
+  }
+
+  &__price {
+    height: 133px;
+  }
+
+  &__price &__title {
+    margin-bottom: 23px;
+  }
+
+  // range slider для цены
+  /* Для Chrome, Safari, Edge и Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Для Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  &__range-slider {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  &__input {
+    width: 55px;
+    border: none;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  &__btn {
+    width: 100px;
+    height: 35px;
+  }
+
+  /* стили трэка */
+  .noUi-target {
+    width: 95%;
+    height: 4px;
+    background-color: rgba(70, 163, 88, 0.2);
+    border: none;
+  }
+
+  /* стили прогресс-бара */
+  .noUi-connect {
+    background-color: rgba(70, 163, 88, 1);
+  }
+
+  /* стили ручки */
+  .noUi-horizontal .noUi-handle {
+    height: 21px;
+    width: 21px;
+    background-color: rgba(70, 163, 88, 1);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: none;
+    top: -8px;
+  }
+
+  /* внутри ручки */
+  .noUi-handle::after,
+  .noUi-handle::before {
+    display: none;
+  }
+
+  &__banner {
+    width: 100%;
+    height: 38%;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.catalog {
+  &__controls {
+    height: 23px;
+    margin-bottom: 31px;
+    @include mixins.flex-base;
+    flex-wrap: wrap;
+  }
+
+  &__cards {
+    height: calc(100% - 54px);
+    @include mixins.flex-cards;
+    row-gap: 20px;
+
+    @include media.tablet {
+      row-gap: 30px;
+    }
+  }
+}
+
+.filter {
+  @include mixins.flex-base;
+  gap: 37px;
+
+  &__button {
+    @include mixins.btn-reset;
+    height: 100%;
+    padding-bottom: 7px;
+    transition: color .2s, font-weight .2s;
+  }
+
+  &__button.active {
+    color: var(--color-accent);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-accent);
+  }
+}
+
+.sort {
+  padding-bottom: 7px;
+  @include mixins.flex-base;
+  gap: 8px;
+
+  &__select {
+    border: none;
+    outline: none;
+  }
+}
+
+.pagination {
+  &__wrap {
+    width: 215px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include mixins.flex-base;
+  }
+
+  &__link {
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    border: 1px solid var(--color-light-alt);
+    border-radius: 4px;
+    text-align: center;
+    transition: color .2s, font-weight .2s;
+
+    img {
+      object-fit: contain;
+    }
+
+    @include media.hover {
+      padding: 8px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    &.active {
+      padding: 8px;
+      background-color: var(--color-accent);
+      color: var(--color-bg);
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@forward './scss/normalize';
+@forward './scss/mixins';
+@forward './scss/globals';
+@forward './scss/fonts';
+@forward './scss/variables';
+@forward './scss/media';
+
+@forward './scss/blocks/header';
+@forward './scss/blocks/hero';
+@forward './scss/blocks/products';
+@forward './scss/blocks/card';
+@forward './scss/blocks/about';
+@forward './scss/blocks/blog';
+@forward './scss/blocks/post';
+@forward './scss/blocks/footer';
+@forward './scss/blocks/navbar';

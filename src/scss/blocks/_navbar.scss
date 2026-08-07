@@ -1,0 +1,57 @@
+/* Основные стили панели */
+.bottom-nav {
+  display: none;
+  background-color: var(--color-bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  /* Учет безопасных зон для безрамочных смартфонов (iPhone) */
+  padding-bottom: env(safe-area-inset-bottom);
+
+  /* Стили для интерактивных элементов (ссылок) */
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    height: 100%;
+    color: #7d7d7d;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__item.active {
+    color: var(--color-accent);
+  }
+
+  /* Иконки внутри меню */
+  &__icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  &__icon path {
+    fill: currentColor;
+  }
+
+  &__icon.active path {
+    fill: currentColor;
+  }
+
+  /* Подписи к иконкам */
+  &__label {
+    display: block;
+  }
+}
+
+/* Компенсация высоты навбара, чтобы контент сайта не перекрывался */
+body {
+  padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}

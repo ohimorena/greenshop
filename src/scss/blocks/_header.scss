@@ -1,0 +1,100 @@
+@use '../mixins';
+@use '../media';
+
+.header {
+  height: 78px;
+  width: 100%;
+  border-bottom: 0.30px solid rgba(var(--color-accent-rgb), 0.2);
+  margin-bottom: 12px;
+  @include mixins.flex-base;
+  align-items: stretch;
+
+  @include media.tablet {
+    height: 65px;
+  }
+
+  &__actions {
+    @include mixins.flex-base;
+    gap: clamp(18px, 2.08vw, 30px);
+  }
+
+  &__login-link {
+    width: 100px;
+    height: 35px;
+    font-weight: 500;
+    @include mixins.fluid-text(16, 14);
+    gap: 4px;
+
+    @include media.desktop {
+      width: 90px;
+      height: 30px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  &__search-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  &__cart-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+}
+
+.logo {
+  @include mixins.flex-base;
+
+  &__link {
+    width: 150px;
+    height: 34px;
+
+    @include media.desktop {
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.menu {
+  &__list {
+    height: 100%;
+    @include mixins.flex-base;
+    align-items: stretch;
+    column-gap: clamp(20px, 3.4vw, 50px);
+  }
+
+  &__item {
+    padding-top: 30px;
+    transition: font-weight .2s;
+    @include mixins.flex-base;
+    align-items: stretch;
+
+    @include media.tablet {
+      padding-top: 22px;
+    }
+  }
+
+  &__link {
+    @include mixins.fluid-text(16, 14);
+
+    @include media.hover {
+      color: var(--color-dark);
+      font-weight: 700;
+      border-bottom: 3px solid var(--color-accent);
+    }
+  }
+}
