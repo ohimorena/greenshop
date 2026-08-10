@@ -37,16 +37,31 @@
     }
   }
 
+  &__cart-link,
+  &__search-link {
+    @include media.hover {
+      color: var(--color-accent);
+    }
+  }
+
   &__search-icon {
     width: 20px;
     height: 20px;
     object-fit: contain;
+
+    path {
+      fill: currentColor;
+    }
   }
 
   &__cart-icon {
     width: 24px;
     height: 24px;
     object-fit: contain;
+
+    path {
+      fill: currentColor;
+    }
   }
 }
 

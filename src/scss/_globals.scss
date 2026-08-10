@@ -22,7 +22,6 @@ body {
 .title-1 {
   @include mixins.fluid-text(18, 16);
   font-weight: 700;
-  font-size: 18px;
 }
 
 .link {

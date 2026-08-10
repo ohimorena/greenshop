@@ -53,8 +53,8 @@
 
   &__content {
     width: 56%;
-    padding-top: clamp(20px, 4vw, 68px);
-    padding-left: 43px;
+    padding-top: clamp(20px, 4.7vw, 68px);
+    padding-left: clamp(15px, 3vw, 43px);
     color: var(--color-dark);
     position: relative;
   }

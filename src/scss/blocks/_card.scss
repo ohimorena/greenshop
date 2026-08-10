@@ -3,18 +3,20 @@
 
 .card {
   width: 31%;
-  height: auto;
+  aspect-ratio: 1 / 1.3;
   position: relative;
 
   @include media.tablet {
-    width: 28%;
-    height: auto;
     aspect-ratio: 1;
   }
 
   @include media.mobile {
-    width: 45%;
-    height: auto;
+    width: 48%;
+  }
+
+  @include media.mobile-s {
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
   }
 
   &[data-badge]::after {
@@ -57,7 +59,7 @@
   }
 
   &__title {
-    font-size: 16px;
+    @include mixins.fluid-text(16, 14);
 
     &::after {
       content: "";
@@ -74,17 +76,22 @@
     margin-top: 5px;
     color: var(--color-accent);
     font-weight: 700;
-    font-size: 18px;
+    @include mixins.fluid-text(18, 15);
   }
 
   &__actions {
     width: 100%;
     height: 100%;
+    padding: 14px;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
     transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 25px;
 
     @include media.hover {
       opacity: 1;
@@ -92,6 +99,8 @@
 
     @include media.tablet {
       opacity: 1;
+      justify-content: flex-end;
+      align-items: flex-start;
     }
   }
 
@@ -99,19 +108,17 @@
     @include mixins.btn-reset;
     width: 20px;
     height: 20px;
-    position: absolute;
-    bottom: 12px;
 
-    &:first-child {
-      left: 35%;
-    }
-
-    &:last-child {
-      right: 35%;
+    @include media.hover {
+      color: var(--color-accent);
     }
   }
 
   &__icon {
     object-fit: contain;
+
+    path {
+      fill: currentColor;
+    }
   }
 }
