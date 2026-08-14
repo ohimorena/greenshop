@@ -63,6 +63,11 @@
     font-weight: 500;
     gap: 3px;
 
+    @include media.desktop {
+      width: 120px;
+      height: 35px;
+    }
+
     img {
       width: 18px;
       height: 18px;

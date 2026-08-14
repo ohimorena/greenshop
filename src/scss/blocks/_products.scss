@@ -116,6 +116,11 @@
   &__btn {
     width: 100px;
     height: 35px;
+
+    @include media.desktop {
+      width: 90px;
+      height: 30px;
+    }
   }
 
   /* стили трэка */

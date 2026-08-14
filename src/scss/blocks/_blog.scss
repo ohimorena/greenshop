@@ -2,11 +2,8 @@
 @use '../media';
 
 .blog {
-  height: 447px;
+  min-height: 447px;
   margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
   @include media.desktop {
     margin-bottom: 70px;
@@ -18,6 +15,7 @@
 
   &__content {
     width: 100%;
+    height: 19%;
     text-align: center;
   }
 
@@ -35,7 +33,7 @@
 
   &__posts {
     width: 100%;
-    min-height: 362px;
+    height: 81%;
     @include mixins.flex-base;
   }
 }
