@@ -1,0 +1,43 @@
+@use '../mixins';
+@use '../media';
+
+.search-form {
+  height: 45px;
+  margin-bottom: 17px;
+
+  @include mixins.flex-base;
+  align-items: stretch;
+  gap: 8px;
+
+  display: none;
+
+  &__input {
+    padding: 11px 41px;
+    background-color: var(--color-light);
+    border: none;
+    border-radius: 10px;
+    background-image: url("../../assets/icons/search-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: 11px center;
+    flex-grow: 1;
+
+    &::placeholder {
+      color: #a5a5a5;
+    }
+
+    &:focus {
+      border: 1px solid var(--color-accent);
+      outline: none;
+    }
+  }
+
+  &__btn {
+    width: 45px;
+    aspect-ratio: 1;
+    border-radius: 14px;
+    box-shadow: 0 10px 20px 0 rgb(70 163 88 / 0.3);
+    background-image: url("../../assets/icons/filter.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

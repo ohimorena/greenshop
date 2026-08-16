@@ -27,7 +27,6 @@ $mobile-s: 480px;
   }
 }
 
-// чтоб устранить эффект залипания кнопки для тачскрина
 @mixin hover {
   @media (any-hover: hover) {
     &:hover {
